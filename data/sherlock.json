@@ -1,0 +1,36 @@
+{
+  "nodes":[
+    {
+      "character":"Sherlock",
+      "id":"Sherlock",
+      "influence":5,
+      "zone": 1
+    },
+    {
+      "character":"Watson",
+      "id":"Watson",
+      "influence":3,
+      "zone": 1
+
+    },
+    {
+      "character":"Irene",
+      "id":"Irene",
+      "influence":2,
+      "zone": 2
+
+    }
+  ],
+  "links":[
+    {
+      "source":"Sherlock",
+      "target":"Watson",
+      "weight":2
+    },
+    {
+      "source":"Sherlock",
+      "target":"Irene",
+      "weight":3
+    }
+  ]
+}

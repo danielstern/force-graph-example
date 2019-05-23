@@ -1,7 +1,7 @@
-const d3 = require('d3');
+import * as d3 from 'd3';
+import {data, height, width} from '../config';
 
-const {nodes,links} = require('../data/got');
-import {width,height} from '../config';
+const {nodes,links} = data;
 
 const forceManyBody = d3.forceManyBody();
 
@@ -12,6 +12,6 @@ export const simulation = d3.forceSimulation(nodes)
     .force("collide", d3.forceCollide());
 
 document.querySelector("#GravityControl").addEventListener("change", e=>{
-    manyBody.strength(e.target.value);
+    forceManyBody.strength(e.target.value);
     simulation.alphaTarget(0.3).restart();
 });
