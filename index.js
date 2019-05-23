@@ -1,39 +1,19 @@
-const d3 = require('d3');
-const {links,nodes} = require('./data');
-const [width, height] = [600,600];
+/** todo...
+ *  add more comments
+ *  replace data with open source data (world economics?)
+ */
 
-const simulation = d3.forceSimulation(nodes)
-    .force("link",d3.forceLink(links).id(d => d.id))
-    .force("charge", d3.forceManyBody())
-    .force("center", d3.forceCenter(width / 2, height / 2));
+const d3 = require('d3');
+
+const {links,nodes} = require('./data/got');
+const {drag} = require('./src/drag');
+const {simulation} = require('./src/simulation');
+import {width,height} from './config';
+// const {width,height} = require('./config');
+
+
 
 const svg = d3.select("#Target");
-
-const drag = simulation => {
-
-    function dragstarted(d) {
-        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-        d.fx = d.x;
-        d.fy = d.y;
-    }
-
-    function dragged(d) {
-        d.fx = d3.event.x;
-        d.fy = d3.event.y;
-    }
-
-    function dragended(d) {
-        if (!d3.event.active) simulation.alphaTarget(0);
-        d.fx = null;
-        d.fy = null;
-    }
-
-    return d3.drag()
-        .on("start", dragstarted)
-        .on("drag", dragged)
-        .on("end", dragended);
-};
-
 
 const scale = d3.scaleOrdinal(d3.schemeCategory10);
 
@@ -69,6 +49,7 @@ const text = svg
     .call(drag(simulation));
 
 simulation.on("tick", () => {
+    console.log("TICK!");
     link
         .attr("x1", d => d.source.x)
         .attr("y1", d => d.source.y)
@@ -83,3 +64,4 @@ simulation.on("tick", () => {
         .attr("x", d => d.x)
         .attr("y", d => d.y);
 });
+

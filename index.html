@@ -3,6 +3,7 @@
         svg {
             width: 600px;
             height: 600px;
+            border: 1px solid #ccc;
         }
 
         text {
@@ -11,6 +12,16 @@
     </style>
 </head>
 <body>
+<h1>
+    Force Graph
+</h1>
 <svg id="Target"></svg>
+<div class="controls">
+    <label>
+        Gravity
+        <input type="range" id="GravityControl" min="-50" max="1" value="-30" step="0.1">
+    </label>
+
+</div>
 </body>
 <script src="bundle.js"></script>
