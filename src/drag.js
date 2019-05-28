@@ -1,5 +1,7 @@
 const d3 = require('d3');
 
+// TODO - re-add functionality. removed drag temporarily to clarify dev process.
+
 export const drag = simulation => {
 
     function dragstarted(d) {
