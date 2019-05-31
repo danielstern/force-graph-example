@@ -2,7 +2,7 @@ import * as d3 from "d3";
 import {data, height, width} from "../config";
 import {drag} from "./drag";
 import {link} from "./link";
-import {node, image, ellipseScale} from "./node";
+import {node, ellipseScale} from "./node";
 import {text} from "./text";
 
 
@@ -40,14 +40,15 @@ export const start = () => {
         node
             // .attr("cx", (d) => d.x - ellipseScale(d))
             // .attr("cy", (d) => d.y - ellipseScale(d));
-            .attr("cx", (d) => d.x + ellipseScale(d.influence) * 1.5)
-            .attr("cy", (d) => d.y + ellipseScale(d.influence) * 1.5)
+            // .attr("cx", (d) => d.x + ellipseScale(d.influence) * 1.5)
+            // .attr("cy", (d) => d.y + ellipseScale(d.influence) * 1.5)
             // .attr("cx", (d) => {console.log(d.x, ellipseScale(d)); return d.x})
             // .attr("cx", (d) => {console.log(d.x, ellipseScale(d)); return d.x})
+            .attr("transform", (d) => `translate(${d.x} ${d.y})`);
 
-        image
-            .attr("x", (d) => d.x)
-            .attr("y", (d) => d.y);
+        // image
+        //     .attr("x", (d) => d.x)
+        //     .attr("y", (d) => d.y);
 
         text
             .attr("x", (d) => d.x)

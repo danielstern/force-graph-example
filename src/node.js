@@ -7,11 +7,12 @@ const color = (d) => colorScale(d.zone);
 
 export const ellipseScale = d3.scaleLinear()
     .domain([0, d3.max(nodes.map((node) => node.influence))])
-    .range([5, 25]);
+    .range([20, 80]);
 
 const defs = svg.append("svg:defs");
 
 // todo... circular nodes are col but a lot of overhead... maybe just use rectangular nodes?
+// todo... probably better to just go with rectangular icons and leave circles as homework
 
 // nodes.forEach((node, i) => {
 //     defs.append("svg:pattern")
@@ -43,16 +44,16 @@ const defs = svg.append("svg:defs");
 // // .attr("x", ellipseScale(d.influence) * -1)
 // // .attr("y", ellipseScale(d.influence) * -1)
 //
-
-export const image = svg.selectAll("image")
-    .data(nodes)
-    .join("image")
-    .attr("xlink:href", (d) => `images/${d.image}`)
-    .attr("clip-path", (d) => `url(#${d.id})`)
-    .attr("width",(d) => ellipseScale(d.influence) * 3)
-    .attr("height",(d) => ellipseScale(d.influence) * 3)
-    // .attr("x", ellipseScale(d.influence) * -1)
-    // .attr("y", ellipseScale(d.influence) * -1)
+//
+// export const image = svg.selectAll("image")
+//     .data(nodes)
+//     .join("image")
+//     .attr("xlink:href", (d) => `images/${d.image}`)
+//     .attr("clip-path", (d) => `url(#${d.id})`)
+//     .attr("width",(d) => ellipseScale(d.influence) * 3)
+//     .attr("height",(d) => ellipseScale(d.influence) * 3)
+//     // .attr("x", ellipseScale(d.influence) * -1)
+//     // .attr("y", ellipseScale(d.influence) * -1)
 
 // svg.selectAll("clipPath")
 //     .data(nodes)
@@ -70,20 +71,54 @@ export const image = svg.selectAll("image")
 //     .join("circle")
 //     .attr("r", (d) => ellipseScale(d.influence) + 8)
 //     .attr("stroke", "#fff")
+// //     .attr("stroke-width", 1.5)
+// //     .style("fill", color);
+//     // .style("fill", (d) => "url(#node::" + d.id + ")");
+//
+//
+// // images dont appear
+// export const node = svg.selectAll("clipPath")
+//     .data(nodes)
+//     .join("clipPath")
+//     .attr("id", d=>d.id)
+//     .append("circle")
+//     .attr("r", (d) => ellipseScale(d.influence))
+//     // .attr("stroke", "#fff")
+//     .attr("stroke", d => color(d))
 //     .attr("stroke-width", 1.5)
-//     .style("fill", color);
-    // .style("fill", (d) => "url(#node::" + d.id + ")");
-
-
-// images dont appear
-export const node = svg.selectAll("clipPath")
-    .data(nodes)
-    .join("clipPath")
-    .attr("id", d=>d.id)
-    .append("circle")
-    .attr("r", (d) => ellipseScale(d.influence))
-    // .attr("stroke", "#fff")
-    .attr("stroke", d => color(d))
-    .attr("stroke-width", 1.5)
     // .style("fill", color)
     // .style("fill", (d) => "url(#node::" + d.id + ")");
+
+export const node = svg
+    .selectAll("g")
+    .data(nodes)
+    .join("g");
+//
+// export const node = svg
+//     .selectAll("circle")
+//     .data(nodes)
+//     .join("circle")
+//     .attr("r", (d) => ellipseScale(d.influence) + 8)
+//     .attr("stroke", "#fff")
+//     .attr("stroke-width", 1.5)
+//     .style("fill", color);
+//
+
+node
+    // .append("circle")
+    // .attr("r", (d) => ellipseScale(d.influence) + 8)
+    // .style("fill", color);
+
+    .append("rect")
+    .attr("width", (d) => ellipseScale(d.influence) * 1.1)
+    .attr("height", (d) => ellipseScale(d.influence) * 0.75)
+    .attr("x",  (d) => ellipseScale(d.influence) * -0.11 / 2)
+    .attr("y",  (d) => ellipseScale(d.influence) * -0.075 / 2)
+    .style("fill", color);
+
+node
+    .append("image")
+    .attr("xlink:href", (d) => `images/${d.image}`)
+    .attr("width",(d) => ellipseScale(d.influence))
+    // .attr("height",(d) => ellipseScale(d.influence) * 3)
+    .attr()
