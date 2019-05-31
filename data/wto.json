@@ -4,133 +4,155 @@
       "country": "Argentina",
       "id": "032",
       "influence": 130.32999999999998,
-      "zone": 1
+      "zone": 1,
+      "image": "ar.png"
     },
     {
       "country": "Brazil",
       "id": "076",
       "influence": 15542.062585000003,
-      "zone": 1
+      "zone": 1,
+      "image": "br.png"
     },
     {
       "country": "China",
       "id": 156,
       "influence": 43326.930680000005,
-      "zone": 2
+      "zone": 2,
+      "image": "cn.png"
     },
     {
       "country": "India",
       "id": 356,
       "influence": 4641.181941,
-      "zone": 2
+      "zone": 2,
+      "image": "in.png"
     },
     {
       "country": "Japan",
       "id": 392,
       "influence": 14114.162401000001,
-      "zone": 2
+      "zone": 2,
+      "image": "jp.png"
     },
     {
       "country": "Mexico",
       "id": 484,
       "influence": 6113.538228000001,
-      "zone": 1
+      "zone": 1,
+      "image": "mx.png"
     },
     {
       "country": "Russian Federation",
       "id": 643,
       "influence": 2234.7739730000003,
-      "zone": 3
+      "zone": 3,
+      "image": "ru.png"
     },
     {
       "country": "South Africa",
       "id": 710,
       "influence": 195.2616,
-      "zone": 4
+      "zone": 4,
+      "image": "za.png"
     },
     {
       "country": "United States of America",
       "id": 840,
       "influence": 15272.206587999997,
-      "zone": 5
+      "zone": 5,
+      "image": "us.png"
     },
     {
       "country": "Bolivia, Plurinational State of",
       "id": "068",
       "influence": 943.528221,
-      "zone": 2
+      "zone": 2,
+      "image": "bo.png"
     },
     {
       "country": "Canada",
       "id": 124,
       "influence": 6508.138793,
-      "zone": 5
+      "zone": 5,
+      "image": "ca.png"
     },
     {
       "country": "Chile",
       "id": 152,
       "influence": 14797.963776999997,
-      "zone": 1
+      "zone": 1,
+      "image": "cl.png"
     },
     {
       "country": "Colombia",
       "id": 170,
       "influence": 185.43699999999998,
-      "zone": 1
+      "zone": 1,
+      "image": "co.png"
     },
     {
       "country": "Ecuador",
       "id": 218,
       "influence": 106.599919,
-      "zone": 1
+      "zone": 1,
+      "image": "ec.png"
     },
     {
       "country": "Malaysia",
       "id": 458,
       "influence": 1525.978727,
-      "zone": 2
+      "zone": 2,
+      "image": "my.png"
     },
     {
       "country": "Paraguay",
       "id": 600,
       "influence": 39.201750000000004,
-      "zone": 1
+      "zone": 1,
+      "image": "py.png"
     },
     {
       "country": "Peru",
       "id": 604,
       "influence": 11842.557,
-      "zone": 1
+      "zone": 1,
+      "image": "pe.png"
     },
     {
       "country": "Philippines",
       "id": 608,
       "influence": 1541.952089,
-      "zone": 2
+      "zone": 2,
+      "image": "ph.png"
     },
     {
       "country": "Singapore",
       "id": 702,
       "influence": 477.52,
-      "zone": 2
+      "zone": 2,
+      "image": "sg.png"
     },
     {
       "country": "Thailand",
       "id": 764,
       "influence": 554.229036,
-      "zone": 2
+      "zone": 2,
+      "image": "th.png"
     },
     {
       "country": "Uruguay",
       "id": 858,
       "influence": 11.918045999999999,
-      "zone": 1
+      "zone": 1,
+      "image": "uy.png"
     },
     {
       "country": "Venezuela, Bolivarian Republic of",
       "id": 862,
       "influence": 78.20442200000001,
-      "zone": 1
+      "zone": 1,
+      "image": "ve.png"
     }
   ],
   "links": [
