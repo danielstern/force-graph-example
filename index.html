@@ -21,6 +21,28 @@
         Relative Size of Imports / Exports, Selected Nations
     </h2>
     <svg id="Target"></svg>
+    <form class="mt-2" name="appearanceSettings">
+        <label>
+            Node Appearance
+            <input type="radio" name="nodeStyle" value="nodeStyleEllipse" checked>
+                Ellipse
+            </input>
+            <input type="radio" name="nodeStyle" value="nodeStyleImage">
+                Image
+            </input>
+        </label>
+        <div>
+            <label>
+                Link Appearance
+                <input type="radio" name="linkStyle" value="linkStyleDirect" checked>
+                    Direct
+                </input>
+                <input type="radio" name="linkStyle" value="linkStyleCurved">
+                    Curved
+                </input>
+            </label>
+        </div>
+    </form>
 </div>
 
 <script src="bundle.js"></script>

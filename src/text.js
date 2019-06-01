@@ -13,3 +13,11 @@ export const text = svg
     .join("text")
     .attr("font-size", (d) => 7 + textScale(d.influence))
     .text((d) => d.country);
+
+export const animate = () => {
+
+    text
+        .attr("x", (d) => d.x)
+        .attr("y", (d) => d.y);
+
+};

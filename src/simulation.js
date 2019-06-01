@@ -1,10 +1,12 @@
 import * as d3 from "d3";
-import {data, height, width} from "../config";
+import {data, height, width, getAppearanceSettings} from "../config";
 import {drag} from "./drag";
-import {link} from "./link";
-import {node, ellipseScale} from "./node";
-import {text} from "./text";
-
+import {link as curveLink, animate as animateCurve} from "./link/curve";
+import {link as directLink, animate as animateDirectLink} from "./link/direct";
+import {node as ellipseNode, animate as animateEllipseNode} from "./node/ellipse";
+import {node as imageNode, animate as animateImageNode} from "./node/image";
+import {text, animate as animateText} from "./text";
+// import {node} from "./node/image";
 
 const {nodes, links} = data;
 
@@ -16,47 +18,52 @@ const forceLink = d3.forceLink(links)
     .id((d) => d.id)
     .distance(200);
 
-// TODO... necessary to add radius or colide?
-const forceCollide = d3.forceCollide()
-    .strength(10);
-    // .radius(d => 10);
+// force collide only makes sense for circles, unless they can be given a "box"
+// const forceCollide = d3.forceCollide()
+//     .strength(10)
+//     .radius(d => 15);
 
 export const start = () => {
-
+//
     const simulation = d3.forceSimulation(nodes)
         .force("link", forceLink)
         .force("charge", forceManyBody)
-        .force("collide", forceCollide)
-        .force("center", d3.forceCenter(width / 2, height / 2));
+        .force("center", d3.forceCenter(width / 2, height / 2))
+     // .force("collide", forceCollide)
 
     simulation.on("tick", () => {
 
-        link
-            .attr("x1", (d) => d.source.x)
-            .attr("y1", (d) => d.source.y)
-            .attr("x2", (d) => d.target.x)
-            .attr("y2", (d) => d.target.y);
+        const settings = getAppearanceSettings();
 
-        node
-            // .attr("cx", (d) => d.x - ellipseScale(d))
-            // .attr("cy", (d) => d.y - ellipseScale(d));
-            // .attr("cx", (d) => d.x + ellipseScale(d.influence) * 1.5)
-            // .attr("cy", (d) => d.y + ellipseScale(d.influence) * 1.5)
-            // .attr("cx", (d) => {console.log(d.x, ellipseScale(d)); return d.x})
-            // .attr("cx", (d) => {console.log(d.x, ellipseScale(d)); return d.x})
-            .attr("transform", (d) => `translate(${d.x} ${d.y})`);
+        // for the man who has everything...
 
-        // image
-        //     .attr("x", (d) => d.x)
-        //     .attr("y", (d) => d.y);
+        if (settings.useDirectLink) {
+            animateDirectLink();
+            directLink.style("opacity",1);
+            curveLink.style("opacity",0);
+        } else {
+            animateCurve();
+            directLink.style("opacity",0);
+            curveLink.style("opacity",1);
+        }
 
-        text
-            .attr("x", (d) => d.x)
-            .attr("y", (d) => d.y);
+
+        animateText();
+
+        if (settings.useEllipseNode) {
+            animateEllipseNode();
+            imageNode.style("opacity",0);
+            ellipseNode.style("opacity", 1);
+        } else {
+            animateImageNode();
+            imageNode.style("opacity",1);
+            ellipseNode.style("opacity", 0);
+        }
+
 
     });
 
-    node.call(drag(simulation));
+    ellipseNode.call(drag(simulation));
+    imageNode.call(drag(simulation));
 
 };
-
