@@ -1,3 +1,1 @@
-import {start} from './src/simulation';
-
-start();
+import './src/animate';

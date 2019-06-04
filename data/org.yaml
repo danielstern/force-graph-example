@@ -1,0 +1,137 @@
+personnel:
+- id: 1
+  name: James Dawkins
+  role: CEO
+
+- id: 2
+  name: Teresa Jamison
+  role: CTO
+  boss: 1
+
+- id: 3
+  name: Gary Jones
+  role: Lead Developer
+  boss: 2
+
+- id: 4
+  name: Corey Smith
+  role: Junior Developer
+  boss: 2
+
+- id: 5
+  name: Amanda Jameson
+  role: Development Intern
+  boss: 3
+
+- id: 6
+  name: Kent Wu
+  role: CFO
+  boss: 1
+
+- id: 7
+  name: James Tang
+  role: Treasurer
+  boss: 6
+
+- id: 8
+  name: Mary Simmons
+  role: Chief Financial Analyst
+  boss: 6
+
+- id: 9
+  name: Laura Stevens
+  role: Junior Financial Analyst
+  boss: 8
+
+- id: 10
+  name: Trent Watts
+  role: Financial Analysis Intern
+  boss: 9
+
+- id: 11
+  name: Roger McNamara
+  role: Chief of Sales
+  boss: 1
+
+- id: 12
+  name: Colleen Wiggins
+  role: Senior Account Executive
+  boss: 11
+
+- id: 13
+  name: Andre Zolovsky
+  role: Junior Account Executive
+  boss: 11
+
+- id: 14
+  name: Andy Jones
+  role: Corporate Sales Rep
+  boss: 11
+
+- id: 15
+  name: Randy Jones
+  role: Corporate Sales Rep
+  boss: 11
+
+- id: 16
+  name: Ida Shivers
+  role: Director of Human Resources
+  boss: 1
+
+- id: 17
+  name: John Grimmond
+  role: Senior Human Resources Manager
+  boss: 16
+
+- id: 18
+  name: Rhoda Malvolio
+  role: Junior Human Resources Manager
+  boss: 16
+
+- id: 19
+  name: Donny Sauerman
+  role: Junior Human Resources Manager
+  boss: 16
+
+
+offices:
+  tech office:
+  - 2
+  - 3
+  - 4
+  - 5
+
+  finance office:
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+
+  sales office:
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+
+  hr office:
+  - 16
+  - 17
+  - 18
+  - 19
+
+committees:
+  compliance:
+  - 8
+  - 10
+  - 12
+
+  birthday:
+  - 2
+  - 15
+
+  community:
+  - 16
+  - 11
+  - 3

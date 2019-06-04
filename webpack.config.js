@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
     mode: "development",
     entry:"./index.js",
@@ -8,6 +9,9 @@ module.exports = {
         extensions: ['.js','.json']
     },
     module: {
-        rules: []
+        rules: [{
+            test: /\.yaml$/,
+            use: 'js-yaml-loader',
+        }]
     }
 };
