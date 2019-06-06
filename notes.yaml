@@ -9,11 +9,12 @@ image source:
 to do:
 - add a hovercard
 - links
-  - add curved links
+#  - add curved links
   - add arrow links
   - add UI elements to toggle between different link kinds (for finished project, not code-along demo)
 - add images for nodes
 
 
 homework:
-- create circular images for links instead of the existing rectangular ones
+#- create circular images for links instead of the existing rectangular ones
+- add a static legend mapping color to the appropriate department

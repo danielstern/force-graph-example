@@ -10,6 +10,18 @@
         text {
             user-select: none;
         }
+
+        /* that's neat... */
+        /*.hover:hover {*/
+            /*opacity: 1 !important;*/
+            /*animation-name: fade;*/
+            /*animation-duration: 0.4s;*/
+        /*}*/
+
+        @keyframes fade {
+            from {opacity: 0;}
+            to {opacity: 1 !important;}
+        }
     </style>
 </head>
 <body>
@@ -20,7 +32,13 @@
     <h2>
         Heirarchy, Major Organization
     </h2>
-    <svg id="Target"></svg>
+    <svg id="Target">
+        <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="20" refY="3" orient="auto" markerUnits="strokeWidth">
+                <!--<path d="M0,0 L0,6 L6,3 z" fill="rgba(72, 72, 72, 0.5)" />-->
+            </marker>
+        </defs>
+    </svg>
     <form class="mt-2" name="appearanceSettings">
         <label>
             Node Appearance

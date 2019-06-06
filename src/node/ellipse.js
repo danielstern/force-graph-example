@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 import {data, svg, getAppearanceSettings} from "../../config";
 import {simulation} from '../simulation';
+import {drag} from "../drag";
 
 const {nodes} = data;
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
@@ -10,13 +11,21 @@ export const nodeScale = d3.scaleLinear()
     .range([5, 25]);
 
 export const node = svg
-    .selectAll("circle")
+    .selectAll("g")
     .data(nodes)
-    .join("circle")
+    .join("g");
+
+export const circle = node
+    // .selectAll("circle")
+    // .data("nodes")
+    // .join("circle")
+    .append("circle")
     .attr("r", (d) => nodeScale(d.influence))
     .attr("stroke", "#fff")
-    .attr("stroke-width", 1.5)
+    .attr("stroke-width", 0.5)
     .style("fill", (d) => colorScale(d.zone));
+
+node.call(drag(simulation));
 
 export const animate = () => {
 
@@ -25,12 +34,13 @@ export const animate = () => {
     if (settings.useEllipseNode) {
 
         node.attr("transform", (d) => `translate(${d.x} ${d.y})`);
-        node.style("opacity", 1);
+        // circle.style("opacity", 1);
 
     } else {
 
-        node.style("opacity", 0);
+        // circle.style("opacity", 0);
 
     }
 
 };
+

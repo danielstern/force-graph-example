@@ -17,7 +17,7 @@ export const text = svg
 export const animate = () => {
 
     text
-        .attr("x", (d) => d.x)
-        .attr("y", (d) => d.y);
+        .attr("x", (d) => d.x + 12)
+        .attr("y", (d) => d.y + 15);
 
 };

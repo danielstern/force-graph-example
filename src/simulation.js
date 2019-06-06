@@ -1,13 +1,11 @@
 import * as d3 from "d3";
 import {data, height, width, getAppearanceSettings} from "../config";
 
-// import {drag} from "./drag";
-
 /**
  * Gravity determines how strongly the nodes push / pull eachother.
  * In effect, the lower the number goes, the more spread out the graph will be.
  */
-const gravity = -100;
+const gravity = - 100;
 const {nodes, links} = data;
 
 const forceManyBody = d3

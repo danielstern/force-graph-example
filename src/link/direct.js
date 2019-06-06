@@ -22,7 +22,8 @@ export const link = svg
     .attr("stroke", "#999")
     .attr("stroke-opacity", 0.6)
     .attr("stroke-dasharray", d => linkDashScale(d.weight))
-    .attr("stroke-width", (d) => linkWidthScale(d.weight));
+    .attr("stroke-width", (d) => linkWidthScale(d.weight))
+    .attr("marker-end", "url(#arrow)")
 
 export const animate = () => {
 

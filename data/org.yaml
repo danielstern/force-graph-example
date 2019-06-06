@@ -93,6 +93,46 @@ personnel:
   role: Junior Human Resources Manager
   boss: 16
 
+- id: 20
+  name: Gary Malvolio
+  role: CLO
+  boss: 1
+
+- id: 21
+  name: Shaun Dimon
+  role: Senior Advisor, Corporate Law
+  boss: 20
+
+- id: 22
+  name: Alton Duum
+  role: Advisor, Corporate Law
+  boss: 20
+
+- id: 23
+  name: Grant Lovebad
+  role: Senior Litigator
+  boss: 20
+
+- id: 24
+  name: Stacy Hinder
+  role: Litigation Assistant
+  boss: 23
+
+- id: 25
+  name: Andrew Payne
+  role: Litigation Assistant
+  boss: 23
+
+- id: 26
+  name: Morton Baffler
+  role: Legal Intern
+  boss: 25
+
+- id: 27
+  name: Vikesh Harm
+  role: Legal Intern
+  boss: 25
+
 
 offices:
   tech office:
@@ -121,6 +161,16 @@ offices:
   - 18
   - 19
 
+  legal office:
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+
 committees:
   compliance:
   - 8
@@ -128,10 +178,13 @@ committees:
   - 12
 
   birthday:
-  - 2
+  - 4
   - 15
+  - 23
+  - 6
 
   community:
   - 16
   - 11
   - 3
+  - 24
