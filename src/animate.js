@@ -13,7 +13,7 @@ import {animate as animateHovercard} from './text/hovercard';
 simulation.on("tick", () => {
 
     animateEllipseNode();
-    // animateDirectLink();
+    animateDirectLink();
     animateHovercard();
     // animateStaticText();
 
