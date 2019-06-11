@@ -23,10 +23,18 @@ export const link = svg
     .attr("stroke-opacity", 0.6)
     .attr("stroke-dasharray", d => linkDashScale(d.weight))
     .attr("stroke-width", (d) => linkWidthScale(d.weight))
-    .attr("marker-end", "url(#arrow)")
+    // .attr("marker-end", "url(#arrow)");
 
 export const animate = () => {
 
+    // TODO: possible solution, just caclualte a new point away from v2 in the vague direction of the other point
+
+    console.log(link);
+    if (link.overlap) {
+        console.log("This link overlaps");
+    } else {
+        console.log("This link does not overlap");
+    }
     link
         .attr("x1", (d) => d.source.x)
         .attr("y1", (d) => d.source.y)

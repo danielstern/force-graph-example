@@ -11,21 +11,14 @@
             user-select: none;
         }
 
-        /* that's neat... */
-        .chart-group:hover * {
-            opacity: 1 !important;
-            /*animation-name: fade;*/
-            /*animation-duration: 0.4s;*/
-        }
-
-        /*.hovercard {*/
-            /*z-index: -1000;*/
+        /*.chart-group:hover * {*/
+            /*opacity: 1 !important;*/
         /*}*/
 
-        @keyframes fade {
-            from {opacity: 0;}
-            to {opacity: 1 !important;}
-        }
+        /*@keyframes fade {*/
+            /*from {opacity: 0;}*/
+            /*to {opacity: 1 !important;}*/
+        /*}*/
     </style>
 </head>
 <body>
@@ -39,38 +32,32 @@
     <svg id="Target">
 
         <defs>
-            <marker id="arrow" markerWidth="10" markerHeight="10" refX="20" refY="3" orient="auto" markerUnits="strokeWidth">
-                <!--<path d="M0,0 L0,6 L6,3 z" fill="rgba(72, 72, 72, 0.5)" />-->
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto" markerUnits="strokeWidth" fill="black">
+                <path d="M0,0 L0,6 L6,3 z" fill="black" />
+                <!--<path d="M0,0 L0,6 L6,3 z" fill="rgba(72, 72, 72)" />-->
             </marker>
         </defs>
+        <!--<defs>-->
+            <!--<marker id = "StartMarker" viewBox = "0 0 12 12" refX = "12" refY = "6" markerWidth = "3" markerHeight = "3" stroke = "green" stroke-width = "2" fill = "none" orient = "auto">-->
+                <!--<circle cx = "6" cy = "6" r = "5"/>-->
+            <!--</marker>-->
+            <!--<marker id = "MidMarker" viewBox = "0 0 10 10" refX = "5" refY = "5" markerUnits = "strokeWidth" markerWidth = "3" markerHeight = "3" stroke = "lightblue" stroke-width = "2" fill = "none" orient = "auto">-->
+                <!--<path d = "M 0 0 L 10 10 M 0 10 L 10 0"/>-->
+            <!--</marker>-->
+            <!--<marker id = "EndMarker" viewBox = "0 0 10 10" refX = "5" refY = "5" markerUnits = "strokeWidth" markerWidth = "3" markerHeight = "3" stroke = "red" stroke-width = "2" fill = "none">-->
+                <!--<rect x = "0" y = "0" width = "10" height = "10"/>-->
+            <!--</marker>-->
+        <!--</defs>-->
+        <!--<path d = "M 200 250 L 700 100 L 900 350 L 1200 400 L 1300 200 L 1700 680 L 2200 680 L 2600 400" fill = "none" stroke = "black" stroke-width = "10" marker-start = "url(#StartMarker)" marker-mid = "url(#MidMarker)" marker-end = "url(#EndMarker)"/>-->
+        <!--<path d = "M 1000 750 S 2000 750 2500 1250 S 1200 1000 1300 1400 S 1700 1480 1900 1200" fill = "none" stroke = "tomato" stroke-width = "50" marker-start = "url(#StartMarker)" marker-mid = "url(#MidMarker)" marker-end = "url(#EndMarker)"/>-->
 
-        <!--<g class="hovercard" transform="translate(50,50)" id="Hovercard">-->
-            <!--<rect width="100" height="50" fill="blue">-->
-            <!--</rect>-->
-        <!--</g>-->
+        <!--<path d="M100,250 C100,100 400,100 400,250" fill = "none" stroke = "black" stroke-width = "10" marker-start = "url(#StartMarker)" marker-mid = "url(#MidMarker)" marker-end = "url(#EndMarker)"/>-->
+
     </svg>
-    <!--<form class="mt-2" name="appearanceSettings">-->
-        <!--<label>-->
-            <!--Node Appearance-->
-            <!--<input type="radio" name="nodeStyle" value="nodeStyleEllipse" checked>-->
-                <!--Ellipse-->
-            <!--</input>-->
-            <!--<input type="radio" name="nodeStyle" value="nodeStyleImage">-->
-                <!--Image-->
-            <!--</input>-->
-        <!--</label>-->
-        <!--<div>-->
-            <!--<label>-->
-                <!--Link Appearance-->
-                <!--<input type="radio" name="linkStyle" value="linkStyleDirect" checked>-->
-                    <!--Direct-->
-                <!--</input>-->
-                <!--<input type="radio" name="linkStyle" value="linkStyleCurved">-->
-                    <!--Curved-->
-                <!--</input>-->
-            <!--</label>-->
-        <!--</div>-->
-    <!--</form>-->
+
+    <!--<svg viewBox = "0 0 4000 2000" version = "1.1">-->
+
+    <!--</svg>-->
 </div>
 
 <script src="bundle.js"></script>
