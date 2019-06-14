@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 import {data, svg} from "../config";
-import {simulation} from './simulation';
 import {drag} from "./drag";
+import {simulation} from "./simulation";
 
 const {nodes} = data;
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10);

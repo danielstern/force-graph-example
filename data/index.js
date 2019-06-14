@@ -105,14 +105,15 @@ rawLinks.forEach((rawLink) => {
 
 });
 
-data.links.forEach(link1 => {
-    data.links.forEach(link2 => {
+data.links.forEach((link1) => {
+
+    data.links.forEach((link2) => {
         if (link1 !== link2 && link1.type !== link2.type && linkVectorEquality(link1, link2)) {
 
             link1.overlap.push(link2);
             link2.overlap.push(link1);
 
-            }
+        }
     })
 });
 

@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-import {data, height, width, getAppearanceSettings} from "../config";
+import {data, height, width} from "../config";
 
 const {nodes, links} = data;
 
@@ -8,7 +8,7 @@ const {nodes, links} = data;
  * In effect, the lower the number goes, the more spread out the graph will be.
  */
 
-const gravity = - 100;
+const gravity = -100;
 
 const forceManyBody = d3
     .forceManyBody()

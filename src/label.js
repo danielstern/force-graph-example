@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 import {data, svg} from "../config";
-import {nodeScale} from './node';
+import {nodeScale} from "./node";
 
 const {nodes} = data;
 
@@ -13,31 +13,24 @@ const textContainer = svg
     .data(nodes)
     .enter()
     .append("g");
-    // .text((d) => d.name)
 
-    // .attr((d) => fontSizeScale(d.influence))
-
-    // .selectAll("circle")
-    // .data(nodes)
-    // .enter("circle")
-    // .append("circle")
-    // .attr("r", (d) => nodeScale(d.influence))
-    // .attr("stroke", "#fff")
-    // .attr("stroke-width", 0.5)
-    // .style("fill", (d) => colorScale(d.zone));
-
-const text = textContainer
+textContainer
     .append("text")
     .text((d) => d.name)
     .attr("font-size", (d) => fontSizeScale(d.influence))
-    .attr("transform", (d) => `translate(${nodeScale(d.influence) + 2}, ${nodeScale(d.influence) + 4})`)
+    .attr("transform", (d) => {
+
+        const scale = nodeScale(d.influence);
+        const x = scale + 2;
+        const y = scale + 4;
+        return `translate(${x}, ${y})`;
+
+    });
 
 
 export const animate = () => {
 
     textContainer
         .attr("transform", (d) => `translate(${d.x}, ${d.y})`);
-        // .attr("cx", (d) => d.x)
-        // .attr("cy", (d) => d.y);
 
 };

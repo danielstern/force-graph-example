@@ -35,7 +35,10 @@
       "no-magic-numbers": "off",
       "one-var": "off",
       "array-element-newline": "off",
-      "no-warning-comments": "off"
+      "no-warning-comments": "off",
+      "eol-last": "off",
+      "no-mixed-operators": "off",
+      "function-paren-newline": "off"
     }
   }
 }

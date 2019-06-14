@@ -1,8 +1,7 @@
 import * as d3 from "d3";
+import {node} from "./node";
+import {simulation} from "./simulation";
 import {svg} from "../config";
-import {node} from './node';
-import {simulation} from './simulation';
-import {nodeScale} from './node';
 
 let currentTarget = null;
 
@@ -27,7 +26,7 @@ const cardTextPosition = card
     .attr("font-size", "10")
     .attr("transform", "translate(8, 35)");
 
-node.on("mouseover",(datum) => {
+node.on("mouseover", (datum) => {
 
     currentTarget = d3.event.target;
     card.attr("display", "block");
@@ -35,7 +34,9 @@ node.on("mouseover",(datum) => {
     cardTextName.text(datum.name);
     cardTextPosition.text(datum.role);
 
-    const cardWidth = Math.max(cardTextName.node().getBBox().width, cardTextPosition.node().getBBox().width);
+    const nameWidth = cardTextName.node().getBBox().width;
+    const positionWidth = cardTextPosition.node().getBBox().width;
+    const cardWidth = Math.max(nameWidth, positionWidth);
 
     cardBackground.attr("width", cardWidth + 16);
 
@@ -43,14 +44,14 @@ node.on("mouseover",(datum) => {
 
 });
 
-node.on("mouseout",() => {
+node.on("mouseout", () => {
 
     card.attr("display", "none");
     currentTarget = null;
 
 });
 
-export const animate = (x) => {
+export const animate = () => {
 
     if (currentTarget) {
 
@@ -59,7 +60,7 @@ export const animate = (x) => {
         const xPos = currentTarget.cx.baseVal.value + dist;
         const yPos = currentTarget.cy.baseVal.value - dist;
 
-        card.attr("transform", (d) => `translate(${xPos}, ${yPos})`)
+        card.attr("transform", `translate(${xPos}, ${yPos})`);
 
     }
 

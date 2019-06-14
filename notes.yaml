@@ -1,18 +1,9 @@
 example:
 - https://bl.ocks.org/steveharoz/8c3e2524079a8c440df60c1ab72b5d03
 
-image source:
-- http://flagpedia.net/download
-
-to do:
-- add a hovercard
-- links
-#  - add curved links
-  - add arrow links
-  - add UI elements to toggle between different link kinds (for finished project, not code-along demo)
-- add images for nodes
-
+todo:
+- represent images with links
 
 homework:
-#- create circular images for links instead of the existing rectangular ones
+- create circular images for links instead of the existing rectangular ones
 - add a static legend mapping color to the appropriate department
