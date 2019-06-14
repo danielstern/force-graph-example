@@ -4,7 +4,7 @@
  */
 
 import {simulation} from './simulation';
-import {animate as animateLink} from './link/curve';
+import {animate as animateLink} from './link';
 // import {animate as animateLink} from './link/polyline';
 // import {animate as animateLink} from './link/direct';
 // import {animate as animateLink} from './link/direct-b';

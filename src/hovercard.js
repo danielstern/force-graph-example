@@ -38,7 +38,7 @@ node.on("mouseover",(datum) => {
 
     cardBackground.attr("width", width + 16);
 
-    simulation.alphaTarget(0.3).restart();
+    // simulation.alphaTarget(0.3).restart();
 
 });
 
