@@ -2,6 +2,7 @@ import * as d3 from "d3";
 import {svg} from "../config";
 import {node} from './node';
 import {simulation} from './simulation';
+import {nodeScale} from './node';
 
 let currentTarget = null;
 
@@ -34,11 +35,11 @@ node.on("mouseover",(datum) => {
     cardTextName.text(datum.name);
     cardTextPosition.text(datum.role);
 
-    const width = Math.max(cardTextName.node().getBBox().width, cardTextPosition.node().getBBox().width);
+    const cardWidth = Math.max(cardTextName.node().getBBox().width, cardTextPosition.node().getBBox().width);
 
-    cardBackground.attr("width", width + 16);
+    cardBackground.attr("width", cardWidth + 16);
 
-    // simulation.alphaTarget(0.3).restart();
+    simulation.alphaTarget(0).restart();
 
 });
 
@@ -49,11 +50,16 @@ node.on("mouseout",() => {
 
 });
 
-export const animate = () => {
+export const animate = (x) => {
 
     if (currentTarget) {
 
-        card.attr("transform", `translate(${currentTarget.cx.baseVal.value + 10}, ${currentTarget.cy.baseVal.value})`)
+        const dist = currentTarget.r.baseVal.value + 3;
+
+        const xPos = currentTarget.cx.baseVal.value + dist;
+        const yPos = currentTarget.cy.baseVal.value - dist;
+
+        card.attr("transform", (d) => `translate(${xPos}, ${yPos})`)
 
     }
 

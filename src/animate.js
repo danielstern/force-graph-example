@@ -5,9 +5,7 @@
 
 import {simulation} from './simulation';
 import {animate as animateLink} from './link';
-// import {animate as animateLink} from './link/polyline';
-// import {animate as animateLink} from './link/direct';
-// import {animate as animateLink} from './link/direct-b';
+import {animate as animateLabel} from './label';
 import {animate as animateEllipseNode} from './node';
 import {animate as animateHovercard} from './hovercard';
 
@@ -16,5 +14,6 @@ simulation.on("tick", () => {
     animateEllipseNode();
     animateLink();
     animateHovercard();
+    animateLabel();
 
 });
