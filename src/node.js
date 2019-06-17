@@ -8,7 +8,7 @@ const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
 
 export const nodeScale = d3.scaleLinear()
     .domain([0, d3.max(nodes.map((node) => node.influence))])
-    .range([4, 12]);
+    .range([8, 20]);
 
 export const node = svg
     .selectAll("circle")
