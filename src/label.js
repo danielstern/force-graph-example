@@ -1,3 +1,7 @@
+/**
+ * Force directed graph component which displays the name associated with any Node at the place
+ * that the Node is arranged by the force directed graph.
+ */
 import * as d3 from "d3";
 import {data, svg} from "../config";
 import {nodeScale} from "./node";

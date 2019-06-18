@@ -1,12 +1,11 @@
-import * as d3 from "d3";
+/**
+ * Simple force directed graph component which displays a specific image for each Node in the
+ * place where that Node is arranged by the force directed graph.
+ */
 import {data, svg} from "../config";
-// import {drag} from "./drag";
-// import {simulation} from "./simulation";
+import {nodeScale} from './node';
 
 const {nodes} = data;
-// const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
-
-import {nodeScale} from './node';
 
 export const imageContainer =
     svg
@@ -26,9 +25,5 @@ export const animate = () => {
 
     imageContainer
         .attr("transform", (d) => `translate(${d.x}, ${d.y})`);
-        // .attr("cx", (d) => d.x)
-        // .attr("cy", (d) => d.y);
 
 };
-
-// node.call(drag(simulation));

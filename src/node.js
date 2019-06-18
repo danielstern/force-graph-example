@@ -1,3 +1,6 @@
+/**
+ * Simple component which draws a circle for each node wherever it is arranged by the simulation.
+ */
 import * as d3 from "d3";
 import {data, svg} from "../config";
 import {drag} from "./drag";
@@ -16,7 +19,7 @@ export const node = svg
     .enter()
     .append("circle")
     .attr("r", (d) => nodeScale(d.influence))
-    .attr("stroke", "#fff")
+    .attr("stroke", "#ccc")
     .attr("stroke-width", 0.5)
     .style("fill", (d) => colorScale(d.zone));
 

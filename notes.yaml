@@ -1,9 +1,5 @@
 example:
 - https://bl.ocks.org/steveharoz/8c3e2524079a8c440df60c1ab72b5d03
 
-todo:
-- represent images with links
-
 homework:
-- create circular images for links instead of the existing rectangular ones
 - add a static legend mapping color to the appropriate department

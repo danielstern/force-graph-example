@@ -1,5 +1,10 @@
 import * as d3 from "d3";
 
+/**
+ * Defines standard subroutines for when a node is dragged.
+ * Basically, if a node is dragged, keep moving it to where the mouse is going.
+ */
+
 export const drag = (simulation) => {
 
     const dragstarted = (d) => {

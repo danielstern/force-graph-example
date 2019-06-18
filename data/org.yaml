@@ -1,3 +1,5 @@
+# Various data regarding the people who work at a particular company. Can be displayed as a force directed graph.
+
 personnel:
 - id: 1
   name: James Dawkins

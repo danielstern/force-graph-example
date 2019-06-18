@@ -37,6 +37,8 @@ data.nodes.forEach((individual) => {
 
 });
 
+let linkId = 0;
+
 for (let key in offices) {
     let office = offices[key];
 
@@ -47,6 +49,7 @@ for (let key in offices) {
         office.forEach((individual2) => {
             if (individual2 !== individual) {
                 rawLinks.push({
+                    id: `link--${linkId++}`,
                     source: individual,
                     target: individual2,
                     weight: 0.25,
@@ -108,13 +111,16 @@ rawLinks.forEach((rawLink) => {
 data.links.forEach((link1) => {
 
     data.links.forEach((link2) => {
-        if (link1 !== link2 && link1.type !== link2.type && linkVectorEquality(link1, link2)) {
+        if (link1.id !== link2.id && link1.type !== link2.type && linkVectorEquality(link1, link2)) {
 
-            link1.overlap.push(link2);
-            link2.overlap.push(link1);
+            if (!link1.overlap.includes(link2.id)) link1.overlap.push(link2);
+            if (!link2.overlap.includes(link1.id)) link2.overlap.push(link1);
 
         }
     })
 });
 
-console.info(data);
+/* Want to add: feature that also outputs to a file.
+    Difficult, because this script technically runs in the browser, where FS is not accessible.
+ */
+// fs.writeFile('./org.json', JSON.stringify(data, null, 2) , 'utf-8');

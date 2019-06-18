@@ -1,11 +1,21 @@
+/**
+ * Component of force directed graph that vizualises links between Nodes.
+ */
+
 import * as d3 from "d3";
 import {data, svg} from "../config";
 
+/**
+ * Define a width scale for the lines. Higher weight means thicker links.
+ */
 const linkWidthScale = d3
     .scaleLinear()
     .domain([0, d3.max(data.links.map((link) => link.weight))])
     .range([0.5, 1.5]);
 
+/**
+ * Define how the dashes will work. Extra light and light weight lines get dashes, anything heavier is solid.
+ */
 const linkDashScale = d3
     .scaleOrdinal()
     .domain([0, 2, 3])
@@ -21,6 +31,11 @@ export const link = svg
     .attr("stroke-dasharray", (d) => linkDashScale(d.weight))
     .attr("stroke-width", (d) => linkWidthScale(d.weight))
     .attr("marker-mid", (d) => {
+
+        /**
+         * Define a marker to indicate what kind of line it is.
+         * Currently defined: arrow for subordinate / supervisory relationship.
+         */
 
         switch (d.type) {
 
@@ -47,6 +62,11 @@ export const animate = () => {
             (d.source.y + d.target.y) / 2
         ];
 
+
+        /**
+         * If two lines overlap with each other, curve one of the lines.
+         */
+
         if (d.overlap.length > 0) {
 
             const index = d.overlap.filter((ol) => ol.weight > d.weight).length;
@@ -55,6 +75,10 @@ export const animate = () => {
                 Math.pow(d.target.x - d.source.x, 2) +
                 Math.pow(d.target.y - d.source.y, 2)
             );
+
+            /**
+             * The math below finds a point just off the center of the line.
+             */
 
             const slopeX = (d.target.x - d.source.x) / distance;
             const slopeY = (d.target.y - d.source.y) / distance;
