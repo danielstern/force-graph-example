@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server",
     "test": "eslint src/*.js",
-    "build": "webpack"
+    "build": "webpack",
+    "json-output": "yaml2json data/org.yaml"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +26,8 @@
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1",
     "webpack-dev-server": "^3.3.1",
-    "yaml-loader": "^0.5.0"
+    "yaml-loader": "^0.5.0",
+    "yamljs": "^0.3.0"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
