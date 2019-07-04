@@ -67,9 +67,12 @@ export const animate = () => {
          * If two lines overlap with each other, curve one of the lines.
          */
 
-        if (d.overlap.length > 0) {
+        if (d.overlap > 0) {
 
-            const index = d.overlap.filter((ol) => ol.weight > d.weight).length;
+            const index = d.overlap;
+
+            // console.log("Index?", index);
+            // const index = d.overlap.filter((ol) => ol.weight > d.weight).length;
 
             const distance = Math.sqrt(
                 Math.pow(d.target.x - d.source.x, 2) +
@@ -83,7 +86,7 @@ export const animate = () => {
             const slopeX = (d.target.x - d.source.x) / distance;
             const slopeY = (d.target.y - d.source.y) / distance;
 
-            const curveSharpness = 3 * index;
+            const curveSharpness = 3.5 * index;
             mid[0] += curveSharpness * slopeY;
             mid[1] -= curveSharpness * slopeX;
 
