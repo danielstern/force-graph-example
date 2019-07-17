@@ -25,3 +25,5 @@ This will install all dependencies and start the application.
 - [Getting Started with D3](https://app.pluralsight.com/library/courses/d3-getting-started/table-of-contents)
 - [D3 Data Visualization Fundamentals](https://app.pluralsight.com/library/courses/d3-data-visualization-fundamentals)
 - [Making Data into Something You Can See](https://app.pluralsight.com/library/courses/data-you-can-see/table-of-contents)
+
+#### Have a resource you'd like included? Submit a PR directly!
