@@ -9,4 +9,4 @@
 
 This will install all dependencies and start the application.
 
-3. Navigate to `http://localhost:8080` in your browser.
+3. Navigate to `http://localhost:8080/index.html` in your browser.
