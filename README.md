@@ -10,3 +10,7 @@
 This will install all dependencies and start the application.
 
 3. Navigate to `http://localhost:8080/index.html` in your browser.
+
+# D3 / Force Graphs Resources
+
+- [Understanding Link Distance](http://bl.ocks.org/sathomas/83515b77c2764837aac2)
