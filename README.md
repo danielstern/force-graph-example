@@ -26,4 +26,4 @@ This will install all dependencies and start the application.
 - [D3 Data Visualization Fundamentals](https://app.pluralsight.com/library/courses/d3-data-visualization-fundamentals)
 - [Making Data into Something You Can See](https://app.pluralsight.com/library/courses/data-you-can-see/table-of-contents)
 
-#### Have a resource you'd like included? Submit a PR directly!
+#### Have a resource you'd like included? [Submit a PR directly!](https://github.com/danielstern/force-graph-example/compare)
